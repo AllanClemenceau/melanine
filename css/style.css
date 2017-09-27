@@ -1,3 +1,26 @@
+/*html {
+  background: url("../img/background.jpg") no-repeat fixed center;
+  background-size: cover;
+
+}*/
+
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  display: block;
+  background: url("../img/background.jpg") no-repeat fixed center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+
+  filter: opacity(.2);
+}
+
+
 body {
   font-family: 'Roboto', sans-serif;
 }
@@ -130,25 +153,45 @@ body {
 }
 
 #carousel {
-display: table;
+  display: table;
   width: calc(69vw - 120px);
   height: 150vh;
   margin-top: 25vh;
   margin-left: calc(8vw + 80px);
+  /*background: red;*/
 }
 
 #carousel > .box-item {
   position: relative;
   display: inline-table;
-  width: 50%;
+  width: calc(27vw - 60px);
+  background: #FFF;
+  margin-left: 5vw;
+  margin-bottom: 5vw;
+  box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.3);
+}
+
+#carousel > .box-item:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -5%;
+  left: -10%;
+  width: 120%;
+  height: 110%;
+  background: radial-gradient(100% 100% ellipse at 50% 55%, #B2DFDB 0%, rgba(178,223,219,0.8) 29%, rgba(0,0,0,0) 49%, rgba(0,0,0,0) 100%);
 }
 
 /*#carousel > .box-item:nth-child(odd) {
   border-right: 2px solid black;
 }*/
 
-#carousel > .box-item >img {
-  width: 66%;
-  margin-left: 17%;
+#carousel > .box-item > div {
+  width: calc(24vw - 60px);
+  height: calc(24vw - 60px);
+  margin-top: 1.5vw;
+  margin-left: 1.5vw;
   margin-bottom: 100px;
+  background: url("../img/machin.jpg") no-repeat;
+  background-size: cover;
 }
